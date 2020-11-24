@@ -26,17 +26,17 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-app.get('/', (req, res) => { res.send('it is working') } catch(err => console.error("not working")) )
+app.get('/', (req, res) => { res.send('it is working') } )
 
-app.post('/signIn', (req, res) => { signIn.handleSignIn(req, res, db, bcrypt) }catch(err => console.error("unable to sign in")) )
+app.post('/signIn', (req, res) => { signIn.handleSignIn(req, res, db, bcrypt) } )
 
-app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) }catch(err => console.error("unable to register")) )
+app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) } )
 
-app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) }catch(err => console.error(data)) )
+app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) } )
 
-app.put('/image', (req, res) => { image.handleImage(req, res, db) }catch(err => console.error("image problem")) )
+app.put('/image', (req, res) => { image.handleImage(req, res, db) } )
 
-app.post('/imageUrl', (req, res) => { image.handleApiCall(req, res) }catch(err => console.error("image url invalid")) )
+app.post('/imageUrl', (req, res) => { image.handleApiCall(req, res) } )
 
 
 app.listen(process.env.PORT || 3001, ()=>{
